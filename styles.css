@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.main {
+    width: 420px;
+    height: 600px;
+    background: url("violet.jpg") no-repeat center / cover;
+    border-radius: 12px;
+    box-shadow: 6px 24px 60px #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#chk {
+    display: none;
+}
+
+.signup, .login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signup {
+    background: transparent;
+    z-index: 1;
+}
+
+.login {
+    background: #eee;
+    border-radius: 72% / 12%;
+    transform: translateY(100%); /* Start off-screen */
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login label {
+    color: #573b8a; /* Set label color in the login form */
+    margin-bottom: 20px; /* Add margin to separate from form fields */
+    font-size: 2em; /* Ensure the font size is consistent */
+}
+
+.login button {
+    color: #fff; /* Set text color of the button */
+    background: #573b8a; /* Set button background color */
+}
+
+.login button:hover {
+    background: #6d44b8; /* Set button hover color */
+}
+
+label {
+    color: #fff;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    background: #e0e0e0;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    height: 56px;
+    margin: 20px 0;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1.2em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6d44b8;
+}
+
+#chk:checked ~ .signup {
+    transform: translateY(-100%); /* Slide out the signup form */
+}
+
+#chk:checked ~ .login {
+    transform: translateY(0); /* Slide in the login form */
+}
